@@ -1,0 +1,12 @@
+<form>
+  <div class="form-group">
+    <label >Username</label>
+    <input type="username" class="form-control" placeholder="username" ng-model="admin.username">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" placeholder="Password" ng-model="admin.password">
+  </div>
+  <pre>{{admin}}</pre>
+  <button type="submit" class="btn btn-default" ng-click="saveAdmin()">Submit</button>
+</form>
