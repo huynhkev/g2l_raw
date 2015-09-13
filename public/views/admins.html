@@ -1,12 +1,78 @@
-<form>
-  <div class="form-group">
-    <label >Username</label>
-    <input type="username" class="form-control" placeholder="username" ng-model="admin.username">
+<div class="page-header">
+  <h1>Administration Management</h1>
+</div>
+<div class="row" style="border: 1px solid black">
+  <div class="col-md-6 col-xs-12 col-sm-6">
+    <h3>View Current Administrators</h3>  
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Administrators in Database</div>
+
+      <!-- Table -->
+      <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Username</th>
+              <th>Remove User?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="admin in adminArray">
+              <th scope="row">{{$index + 1}}</th>
+              <td>{{admin.firstName}}</td>
+              <td>{{admin.lastName}}</td>
+              <td>{{admin.username}}</td>
+              <td>
+                <button type="button" class="btn btn-default" ng-click="removeAdmin(admin)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+      </table>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" placeholder="Password" ng-model="admin.password">
+  <div class="col-md-6 col-sm-6 hidden-xs">
+    <h3>Add New Administrators</h3>   
+    <form>
+      <div class="form-group">
+        <label >First Name</label>
+        <input type="firstname" class="form-control" placeholder="First Name" ng-model="admin.firstName">
+      </div>
+      <div class="form-group">
+        <label >Last Name</label>
+        <input type="lastName" class="form-control" placeholder="lastName" ng-model="admin.lastName">
+      </div>      
+      <div class="form-group">
+        <label >Username</label>
+        <input type="username" class="form-control" placeholder="username" ng-model="admin.username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" placeholder="Password" ng-model="admin.password">
+      </div>
+      <pre>{{admin}}</pre>
+      <button type="submit" class="btn btn-default" ng-click="saveAdmin()">Add Admin</button>
+    </form>
   </div>
-  <pre>{{admin}}</pre>
-  <button type="submit" class="btn btn-default" ng-click="saveAdmin()">Submit</button>
-</form>
+
+  <!-- MOBILE ONLY -->
+  <div class="col-xs-12 hidden-md hidden-sm hidden-lg">
+    <h3>Add New Administrators</h3>   
+    <form>
+      <div class="form-group">
+        <label >Username</label>
+        <input type="username" class="form-control" placeholder="username" ng-model="admin.username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" placeholder="Password" ng-model="admin.password">
+      </div>
+      <pre>{{admin}}</pre>
+      <button type="submit" class="btn btn-default" ng-click="saveAdmin()">Add Admin</button>
+    </form>
+  </div>
+  <!-- MOBILE ONLY -->
+
+</div>

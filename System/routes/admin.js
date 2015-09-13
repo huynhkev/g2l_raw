@@ -37,11 +37,13 @@ module.exports = function(app) {
 
   // get all todos
   app.post('/api/newAdmin', function(req, res) {
-      console.log("new admin: " + req.body.username + ", " + req.body.password);
+      //console.log("new admin: " + req.body.username + ", " + req.body.password + ", " + req.body.firstName + ", " + req.body.lastName);
       // create a new admin  
       var newAdmin = new Admin({
         username: req.body.username,
-        password: req.body.password 
+        password: req.body.password,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName
       });        
       newAdmin.save();
       // save the user
@@ -52,6 +54,23 @@ module.exports = function(app) {
         res.send("admin created! :)");
       });
   });   
+
+  // get all todos
+  app.get('/api/getAdmins', function(req, res) {
+    console.log("entering getAdmins");
+    Admin.find({}, function (err, adminArray) {
+      if (err) return handleError(err);
+      console.log(adminArray) // Space Ghost is a talk show host.
+      res.send(adminArray);
+    })    
+  }); 
+
+  //remove admin from database
+  app.post('/api/removeAdmin', function(req, res){
+    console.log("entering removeAdmin");
+    Admin.find(req.body).remove().exec();
+    res.send("Admin removed");
+  });
 
 };
 
