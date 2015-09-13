@@ -10,7 +10,7 @@
     var config = require('./config'); // get our config file
     app.set('sessionSecret', config.secret); // secret variable
 
-    mongoose.connect('mongodb://localhost/admins');     // connect to mongoDB database on modulus.io
+    mongoose.connect('process.env.MONGOLAB_URI || mongodb://localhost/admins');     // connect to mongoDB database on modulus.io
 
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 
