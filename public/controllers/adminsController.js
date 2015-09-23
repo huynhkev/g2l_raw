@@ -1,8 +1,11 @@
-// public/homeController.js
-var adminsController = angular.module('g2l.adminsController', ["g2l.authenticationService"]);
+// public/appController.js
+var adminsController = angular.module('g2l.adminsController', ["g2l.authenticationService", "angular-confirm"]);
 
 adminsController.controller('adminsController', function($scope, $http, $window, authenticationService, $route) {
+  
+  //redirect to start page if not admin
   authenticationService.isNotAuth();
+  
   $scope.admin = {
   	"username": "",
   	"password": "",
@@ -10,11 +13,14 @@ adminsController.controller('adminsController', function($scope, $http, $window,
     "lastName": ""
   };
 
+  //save new admin
   $scope.saveAdmin = function(){
+    //contact api in back-end
     $http.post('/api/newAdmin', $scope.admin)
         .success(function(data) {
  			alert("admin created!");
  			console.log(data);
+      //refresh page
       $route.reload();
         })
         .error(function(data) {
@@ -23,8 +29,10 @@ adminsController.controller('adminsController', function($scope, $http, $window,
         });     	
   }
 
+  //remove admin from database
   $scope.removeAdmin = function(admin){
     console.log(admin);
+    //contact api in back-end
     $http.post('/api/removeAdmin', admin)
         .success(function(data) {
       alert("admin deleted!");
@@ -37,7 +45,8 @@ adminsController.controller('adminsController', function($scope, $http, $window,
         });     
   }
 
-  // Simple GET request to get list of admins
+  // get array of admins to display
+  //contact getAdmins api
   $http.get('/api/getAdmins').
     then(function(response) {
       // this callback will be called asynchronously
