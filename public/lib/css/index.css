@@ -1,3 +1,8 @@
 #funders img {
 	width: 50px;
 }
+
+/* Center all modals on page */
+.modal-dialog {
+	position: static;
+}

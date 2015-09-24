@@ -1,5 +1,5 @@
 // public/appController.js
-var adminsController = angular.module('g2l.adminsController', ["g2l.authenticationService", "angular-confirm"]);
+var adminsController = angular.module('g2l.adminsController', ["g2l.authenticationService"]);
 
 adminsController.controller('adminsController', function($scope, $http, $window, authenticationService, $route) {
   

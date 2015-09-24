@@ -31,7 +31,7 @@
     // routes ======================================================================
     //import the routes for when there are requests to specific route URIs. Passes the app as parameter to help access required files in routes
     var admin = require("./System/routes/admin.js")(app);
-
+    var home = require("./System/routes/home.js")(app);
 
     // route to handle all angular requests
     //NEED THIS FOR FRONT-END ANGULAR ROUTING

@@ -6,6 +6,7 @@ var g2l = angular.module('g2l', [
     "g2l.homeController",
     "g2l.adminsController",
     "textAngular",
+    "angular-confirm",
     'ngRoute']);
 
 //define front-end routes
