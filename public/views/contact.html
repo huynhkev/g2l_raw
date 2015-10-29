@@ -1,0 +1,96 @@
+
+<style>
+
+	h1:before{
+	  content : "";
+	  position: absolute;
+	  bottom  : -10px;
+	  height  : 1px;
+	  width   : 50%;  /* or 100px */
+	  left: 25%;
+	  border-bottom:2px solid #bdc3c7;		
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 48pt;
+		border: 1;
+		position: relative;
+	    z-index : 1;
+	}
+
+	.subheader {
+		font-size: 15pt;
+		text-align: center;
+		padding-top: 5px;
+
+	}
+
+	.inputStyle {
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		box-shadow: none;
+		border-radius: 0px;
+		height: 50px;
+		font-size: 20pt;
+		font-style: italic;
+
+	}
+
+	#message {
+		border-radius: 0px;
+		font-size: 15pt;
+	}
+
+	  #map {
+	    width: 100%;
+	    height: 400px;
+	    margin-top: 2em;
+	  }	
+	 #mapControls {
+	 	text-align: center;
+	 }
+
+
+</style>
+
+<div id="header">
+	<h1>Contact</h1>
+	<p class="subheader">Send us your questions about your donation, purchase, or any general inquiry and we'll get back to you as soon as possible.</p>
+</div>
+
+<div class="container">
+	<form>
+	  <div class="form-group">
+  			<div class="col-md-6 col-sm-6 col-xs-12">
+  				<input type="email" class="form-control inputStyle" placeholder="Enter First Name"> 
+  			</div>	
+  			<div class="col-md-6 col-sm-6 col-xs-12">
+  				<input type="email" class="form-control inputStyle" placeholder="Enter Last Name"> 
+  			</div>		  			
+	  </div>	
+	  <br / >
+	  <br / >
+	  <br / >
+
+	  <div class="form-group">
+	  		<input type="email" class="form-control inputStyle" id="exampleInputEmail1" placeholder="Enter Email Address">
+	  </div>
+	  <div class="form-group">
+	  		<input type="email" class="form-control inputStyle" id="exampleInputEmail1" placeholder="Enter Subject">
+	  </div>	  
+	  <div class="form-group">
+		<textarea  placeholder="Write a Message" id="message" class="form-control" rows="3"></textarea>
+	  </div>
+	  <a class="btn btn-block btn-lg btn-info">Send</a>
+	</form>	
+</div>
+
+<div class="container" style="margin-top: 2em">
+	<div id="mapControls">
+		<a switch-map info="desk" class="btn btn-lg btn-info">Connecions desk</a>
+		<a switch-map info="main" class="btn btn-lg btn-info">Headquarters</a>
+	</div>
+	<div id="map"></div>
+</div>

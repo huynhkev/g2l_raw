@@ -6,3 +6,18 @@
 .modal-dialog {
 	position: static;
 }
+
+.navbar-default .navbar-brand{
+	color: #6291c2;
+	font-size: 20px;
+}
+
+.navbar-default {
+	background-color: white;
+	border-radius: 0px;
+}
+
+.btn-toolbar .btn-group {
+	margin-bottom: 3px;
+}
+

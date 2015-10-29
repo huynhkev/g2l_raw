@@ -5,8 +5,11 @@ var g2l = angular.module('g2l', [
     "g2l.authenticationService",
     "g2l.homeController",
     "g2l.adminsController",
+    "g2l.teamController",
+    "g2l.contactController",
     "textAngular",
     "angular-confirm",
+    "toggle-switch",
     'ngRoute']);
 
 //define front-end routes
@@ -21,9 +24,17 @@ g2l.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             controller: 'homeController'
         }).
         when("/manageAdmins", {
-            templateUrl: 'views//admins.html',
+            templateUrl: 'views/admins.html',
             controller: 'adminsController'
         }).
+        when("/theTeam", {
+            templateUrl: 'views/team.html',
+            controller: 'teamController'
+        }).
+        when("/contact", {
+            templateUrl: 'views/contact.html',
+            controller: 'contactController'
+        }).                
         otherwise({
             redirectTo: "/"
         });
