@@ -7,6 +7,7 @@ var g2l = angular.module('g2l', [
     "g2l.adminsController",
     "g2l.teamController",
     "g2l.contactController",
+    "g2l.galleryController",
     "textAngular",
     "angular-confirm",
     "toggle-switch",
@@ -15,7 +16,7 @@ var g2l = angular.module('g2l', [
 //define front-end routes
 g2l.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider.
-        when("/", {
+        when("/adminPortal", {
             templateUrl: 'views/login.html',
             controller: 'mainController'
         }).
@@ -34,9 +35,13 @@ g2l.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         when("/contact", {
             templateUrl: 'views/contact.html',
             controller: 'contactController'
-        }).                
+        }).  
+        when("/gallery", {
+            templateUrl: 'views/gallery.html',
+            controller: 'galleryController'
+        }).                        
         otherwise({
-            redirectTo: "/"
+            redirectTo: "/home"
         });
        $locationProvider.html5Mode({
         requireBase: false,
@@ -58,7 +63,7 @@ g2l.controller('mainController', function($scope, $http, $window, authentication
             .success(function(data) {
                 if(data){
                     if(data.success){
-                        $location.url("/home");
+                        $location.url("/manageAdmins");
                         return data;
                     }else{
                         alert("no password match");

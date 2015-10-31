@@ -81,7 +81,7 @@ adminsController.directive("switchMap", function($compile){
           //     
            element.bind("click", function(e){
             angular.element(document.querySelector('#map')).remove();              
-            var childNode = $compile('<div id="spinner" style="margin-top: 2em"><i class="fa fa fa-wrench faa-wrench animated fa-5x faa-fast" ></i></div><div id="map" "style="border: 1px solid black" ></div>')(scope)
+            var childNode = $compile('<div id="spinner" style="margin-top: 2em"><i class="fa fa fa-wrench faa-wrench animated fa-5x faa-fast" ></i><p>Building Map...</p></div><div id="map" "style="border: 1px solid black" ></div>')(scope)
             element.parent().append(childNode);       
             console.log(scope["info"]);  
 

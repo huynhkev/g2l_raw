@@ -41,6 +41,7 @@
     <script src="controllers/adminsController.js"></script>    
     <script src="controllers/teamController.js"></script>  
     <script src="controllers/contactController.js"></script>  
+    <script src="controllers/galleryController.js"></script>  
     
     <!-- core -->
     <script src="core.js"></script>
@@ -56,14 +57,90 @@
     <link rel="stylesheet" href="lib/angular-toggle-switch/angular-toggle-switch.css">
 </head>
 
-  <style>
+  <style>    
      #topNav{
         border-bottom: 2px solid #bdc3c7;
+
      }
+
+
+    #socialMedia {
+      overflow: auto;
+      padding-left:0;
+    }
+
+    #socialMedia li {
+      list-style-type: none;
+      float: left;
+    }
+
+    #socialMedia li a i {
+     
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      font-size: 25px;
+      text-align: center;
+      margin-right: 10px;
+      padding-top: 15%;
+    }
+
+    #socialMedia li a i {
+      transition: all 0.2s ease-in-out;
+    }
+    #socialMedia li a i:hover {
+      opacity: .7;
+    }
+
+    .fa-facebook {
+      background:#3b5998
+    } 
+    .fa-linkedin {
+      background:#007bb6
+    }
+    .fa-twitter {
+      background:#00aced
+    }
+
+    #header h1:before{
+      content : "";
+      position: absolute;
+      bottom  : -10px;
+      height  : 1px;
+      width   : 50%;  /* or 100px */
+      left: 25%;
+      border-bottom:2px solid #bdc3c7;    
+    }
+
+    #header h1{
+      text-align: center;
+      font-size: 48pt;
+      border: 1;
+      position: relative;
+        z-index : 1;
+    }
+
+    .subheader {
+      font-size: 15pt;
+      text-align: center;
+      padding-top: 5px;
+
+    }    
+
+    #funders {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    .nav li .dropdown-menu{
+      margin-top: 0px;
+    }
+    
   </style>
 <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
-    <nav class="navbar navbar-default" style="margin: 0px; border: none; background-color: black">
+    <!-- <nav class="navbar navbar-default" style="margin: 0px; border: none; background-color: black">
       <div class="container-fluid">
    
           <a class="navbar-brand" href="#">
@@ -113,7 +190,8 @@
         
       </div>
     </nav>    
-    <nav class="navbar navbar-default" id="topNav">
+     -->
+     <nav class="navbar navbar-default" id="topNav">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -123,7 +201,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/"><img src="funders/globaltolocal.png"/></a>
+          <a class="navbar-brand" href="/home"><img src="funders/globaltolocal.png"/></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -135,10 +213,10 @@
               <b class="caret"></b>
               </a>
               <span class="dropdown-arrow"></span>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-margin">
                     <li><a href="/theTeam">Board & Team</a></li>
                     <li><a href="#">Events</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
               </ul>
             </li>  
             <li class="dropdown" id="experienceTab">            
@@ -146,7 +224,7 @@
               <b class="caret"></b>
               </a>
               <span class="dropdown-arrow"></span>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-margin">
                     <li><a href="#">Programs</a></li>
                     <li><a href="#">Map</a></li>
               </ul>     
@@ -157,9 +235,10 @@
               <b class="caret"></b>
               </a>
               <span class="dropdown-arrow"></span>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-margin">
                     <li><a href="/contact">Contact</a></li>
                     <li><a href="#">Opportunities</a></li>
+                    <li><a href="/adminPortal">Admin Portal</a></li>
               </ul>                
             </li>
           </ul>
@@ -172,7 +251,7 @@
         <div ng-view></div>
     </div>
 
-    <nav class="navbar navbar-default" style="margin-bottom: 0px; bottom: 0px; width: 100%">
+<!--     <nav class="navbar navbar-default" style="margin-bottom: 0px; bottom: 0px; width: 100%">
         
         <div class="col-md-4 col-xs-12 col-sm-4" style="padding-top: 2em; font-size: 8pt;">
             <i>Copyright &copy; 2013, Global to Local. All rights reserved.</i>
@@ -188,6 +267,81 @@
         <div class="col-md-4 col-xs-12 col-sm-4">
         </div>
 
-    </nav>  
+    </nav>  -->
+
+<div id="header">
+  <h1>Sponsors</h1>
+  <p class="subheader">Thank you to our supporters</p> 
+</div>
+
+  <div id="funders" class="row">
+      <img src="funders/healthpoint.png" />
+      <img src="funders/public-health.png" />
+      <img src="funders/city-of-seatac.png" />
+      <img src="funders/swedish.png" />
+      <img src="funders/seal-of-tukwila-washington.png" />
+      <img src="funders/washington-global-health-alliance.png" />
+  </div> 
+
+<footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-7 col-md-7">
+
+            <form class="form-inline" style="margin-top: 20px; margin-bottom: 10px">
+              <div class="form-group">
+               <button type="submit" class="btn btn-info">Subscribe</button>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="inputEmail" placeholder="Enter Email">
+              </div>
+            </form>
+
+            <button class="btn btn-success btn-lg btn-block" style="width: 90%">Donate</button>
+            <br />
+            <ul id="socialMedia">
+              <li><a href="http://facebook.com/"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="http://linkedin.com/"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="http://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+            </ul>
+            <br />
+            <p>
+              Copyright © 2013, Global to Local. All rights reserved.
+            </p>
+          </div> <!-- /col-xs-7 -->
+
+          <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="footer-banner">
+              <h3 class="footer-title">Global to Local</h3>
+                <ul>
+                  <li>
+                    <p><b>Headquarters</b></p>
+                    <p>
+                      2800 S. 192nd St., Suite 104
+                      <br />
+                      SeaTac, WA 98188
+                      <br />
+                      206-359-0536
+                    </p>
+                  </li>
+                  <li>
+                    <p><b>Connections Desk</b></p>
+                    <p>
+                      4040 South 188th St.
+                      <br />
+                      SeaTac, WA 98188
+                      <br />
+                      206-816-3243
+                    </p>
+                  </li>    
+                  <li>
+                    info@globaltolocal.org 
+                  </li>              
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer> 
 </body>
 </html>
