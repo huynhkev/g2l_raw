@@ -8,6 +8,7 @@ var g2l = angular.module('g2l', [
     "g2l.teamController",
     "g2l.contactController",
     "g2l.galleryController",
+    "g2l.eventsController",
     "textAngular",
     "angular-confirm",
     "toggle-switch",
@@ -39,6 +40,10 @@ g2l.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         when("/gallery", {
             templateUrl: 'views/gallery.html',
             controller: 'galleryController'
+        }).              
+        when("/events", {
+            templateUrl: 'views/events.html',
+            controller: 'eventsController'
         }).                        
         otherwise({
             redirectTo: "/home"

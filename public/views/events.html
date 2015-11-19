@@ -1,0 +1,129 @@
+<style>
+
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 400px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h3 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  line-height: 400px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/3f/4th_of_July_(2008)_fireworks_over_Seattle_(3).jpg");
+}
+section.module.parallax-2 {
+  background-image: url("https://icstv.files.wordpress.com/2013/03/img_6726.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("http://static1.squarespace.com/static/54d819e7e4b07462f19ff281/t/54e41918e4b0c276fdf5a642/1424234781037/office-desk-background-2.jpg?format=1500w");
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+}
+/*	.container {
+	  max-width: 960px;
+	  margin: 0 auto;
+	}*/
+	.row {
+		margin: 1em;
+	}
+
+</style>
+<div class="container-fluid" style="margin-top: -36px;">
+  <section class="module parallax parallax-1">
+    <div class="container">
+      <h3>Events</h3>
+    </div>
+  </section>
+  <section class="module content container">	
+		<ul class="nav nav-pills nav-justified">
+		      <li role="presentation" ng-class="{'active': upcoming}" >
+		      	<a href="#" ng-click="upcoming = true">Upcoming</a>
+		      </li>
+		      <li role="presentation" ng-click="upcoming = false" ng-class="{'active': !upcoming}" ><a href="#">Past</a></li>
+		 </ul>
+
+	  	<div class="row" ng-show="upcoming">
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			  <img src="http://ptslaw.com/wp-content/themes/ptslaw2/img/placeholder/500x500.gif" class="img-thumbnail" alt="...">
+	  		</div>
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			<h1>FIN Meetup</h1>
+	  			<h5>Location: 555 55th ave S Seatac, WA 98125</h5>
+	  			<h5><i class="fa fa-clock-o fa-5"></i> 12:00 PM - 1:30 PM</h5>
+	  			<br />
+	  			<h6>Description:</h6>
+	  			<p>Learn more about FIN initiatives and network with FIN members.</p>
+	  		</div>
+	  	<!-- 	<div class="col-md-1 col-sm-4 col-xs-4"></div> -->
+	  	</div>	 
+	  	<div class="row" ng-show="upcoming">
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			  <img src="http://ptslaw.com/wp-content/themes/ptslaw2/img/placeholder/500x500.gif" class="img-thumbnail" alt="...">
+	  		</div>
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			<h1>Front Desk Meetup</h1>
+	  			<h5>Location: 555 55th ave S Seatac, WA 98125</h5>
+	  			<h5><i class="fa fa-clock-o fa-5"></i> 12:00 PM - 1:30 PM</h5>
+	  			<br />
+	  			<h6>Description:</h6>
+	  			<p>Learn more about Front Desk initiatives and network with Front Desk members.</p>
+	  		</div>
+	  	<!-- 	<div class="col-md-1 col-sm-4 col-xs-4"></div> -->
+	  	</div>	  	
+	  	<div class="row" ng-show="!upcoming">
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			  <img src="http://ptslaw.com/wp-content/themes/ptslaw2/img/placeholder/500x500.gif" class="img-thumbnail" alt="...">
+	  		</div>
+	  		<div class="col-md-6 col-sm-6 col-xs-12">
+	  			<h1>Main Office Meetup</h1>
+	  			<h5>Location: 555 55th ave S Seatac, WA 98125</h5>
+	  			<h5><i class="fa fa-clock-o fa-5"></i> 12:00 PM - 1:30 PM</h5>
+	  			<br />
+	  			<h6>Description:</h6>
+	  			<p>Learn more about Main Office initiatives and network with Main Office members.</p>
+	  		</div>
+	  	</div>  	
+	</div>
+</section>

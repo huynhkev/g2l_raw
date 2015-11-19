@@ -1,3 +1,208 @@
-<div>
-	Hello
+<style>
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* ============================================================
+  SECTIONS
+============================================================ */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 400px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h3 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 48px;
+  line-height: 400px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+section.module.parallax-1 {
+  background-image: url("https://lifewithjuliadotcom1.files.wordpress.com/2015/02/polaroid-020.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("https://icstv.files.wordpress.com/2013/03/img_6726.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("http://static1.squarespace.com/static/54d819e7e4b07462f19ff281/t/54e41918e4b0c276fdf5a642/1424234781037/office-desk-background-2.jpg?format=1500w");
+}
+
+@media all and (min-width: 600px) {
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax h1 {
+    font-size: 96px;
+  }
+}
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-size: 160px;
+  }
+
+.thumbnailCircle {
+	border-radius: 50%;
+}
+
+.thumbnailCircle img:hover {
+	opacity: .5;
+}
+
+.modal-body p {
+	text-align: center;
+}
+
+} 
+
+</style>
+<div class="container-fluid" style="margin-top: -36px;">
+  <section class="module parallax parallax-1">
+    <div class="container">
+      <h3>Gallery</h3>
+    </div>
+  </section>
+
+  <section class="module content">
+  <div class="container text-center">
+	<div class="row">
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal1">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal2">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal3">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>	  
+	</div>  	
+  </div>
+  </section>
+
+<section class="module parallax parallax-2">
+    <div class="container">
+      <h3>Gallery</h3>
+    </div>
+  </section>
+
+  <section class="module content">
+  <div class="container text-center">
+	<div class="row">
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal1">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal2">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>
+	  <div class="col-xs-12 col-md-4">
+	    <a href="#" class="thumbnailCircle" data-toggle="modal" data-target="#myModal3">
+	      <img class="img-circle img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt="...">
+	    </a>
+	  </div>	  
+	</div>  	
+  </div>
+  </section>
+  
+<!-- Modal 1-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModal1Label">My Trip to Kenya</h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive thumbnail" src="http://static3.demotix.com/sites/default/files/imagecache/a_scale_large/600-6/photos/1305914264-humanitarian-operation-in-north-darfur_697086.jpg" />
+        <p><i>A man shaving a poor african boy's hair</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Modal 2-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModal2Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModal2Label">Helping the Elderly</h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive thumbnail" src="https://files.foreignaffairs.com/styles/large-crop-landscape/s3/legacy/images/WesternGoldstein_HumanitarianIntervention_2000.jpg?itok=OT0Z45lS
+		" />
+        <p><i>Giving granny some Vodka.</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModal3Label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModal3Label">One Way Ticket to Hammy</h4>
+      </div>
+      <div class="modal-body">
+        <img class="img-responsive thumbnail" src="http://coralspringstalk.com/wp-content/uploads/2012/10/about-pakistan.jpg
+		" />
+        <p><i>Oh Boy it's cramped in here...</i></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>  
+
