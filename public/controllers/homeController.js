@@ -9,7 +9,7 @@ homeController.controller('homeController', function($scope, $http, $window, aut
   $scope.showButton = authenticationService.booleanAuth();
   console.log(authenticationService.booleanAuth());
 
-  getStories();
+  //getStories();
 
   $scope.stories = [];
 
