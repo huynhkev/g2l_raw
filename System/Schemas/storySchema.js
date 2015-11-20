@@ -2,5 +2,4 @@
 
 var storySchema = {text: String, date: String};
 var mongoose = require('mongoose');   
-
 module.exports = mongoose.model('Story', storySchema);

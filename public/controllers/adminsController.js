@@ -4,7 +4,7 @@ var adminsController = angular.module('g2l.adminsController', ["g2l.authenticati
 adminsController.controller('adminsController', function($scope, $http, $window, authenticationService, $route) {
   
   //redirect to start page if not admin
-  //authenticationService.isNotAuth();
+  authenticationService.isNotAuth();
   
   $scope.admin = {
   	"username": "",

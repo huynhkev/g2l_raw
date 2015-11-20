@@ -10,7 +10,6 @@
     var config = require('./config'); // get our config file. config contains static data we can use throughout whole app
     app.set('sessionSecret', config.secret); // secret variable. Stores the secret variable for authentication
 
-    app.set('port', (process.env.PORT || 5000));
     //process.env.MONGOLAB_URI is the link used to connect to mongolab's database for when app is deployed to host site
     //if there is no host database available, then app will connect to mongodb database in localhost. The database is called 'admins'
     mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/admins'); 
@@ -26,15 +25,9 @@
     // listen (start app with node server.js) ======================================
     //process.env.PORT used when deploying site to host site. Connects to their port
     //else, connect to local port on your machine
+    app.listen(process.env.PORT || 5000);
 
-    //app.listen(process.env.PORT || 5000);
-
-    //console.log("App listening on port 5000");
-
-    app.listen(app.get('port'), function() {
-      console.log('Node app is running on port', app.get('port'));
-    });
-
+    console.log("App listening on port 5000");
 
     // routes ======================================================================
     //import the routes for when there are requests to specific route URIs. Passes the app as parameter to help access required files in routes
