@@ -19,7 +19,8 @@
     });
 
     mongoose.connection.on("error", function() {
-        console.log("error");
+        console.log(process.env.MONGOLAB_URI);
+        console.log("error: could not connect to database");
     });
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 
@@ -33,7 +34,7 @@
     //process.env.PORT used when deploying site to host site. Connects to their port
     //else, connect to local port on your machine
     app.listen(process.env.PORT || 5000);
-
+    console.log(process.env.PORT);
     console.log("App listening on port 5000");
 
     // routes ======================================================================
