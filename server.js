@@ -9,7 +9,7 @@
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
     var config = require('./config'); // get our config file. config contains static data we can use throughout whole app
     app.set('sessionSecret', config.secret); // secret variable. Stores the secret variable for authentication
-
+    app.set('port', (process.env.PORT || 5000));
     //process.env.MONGOLAB_URI is the link used to connect to mongolab's database for when app is deployed to host site
     //if there is no host database available, then app will connect to mongodb database in localhost. The database is called 'admins'
     mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/admins'); 
@@ -25,7 +25,9 @@
     // listen (start app with node server.js) ======================================
     //process.env.PORT used when deploying site to host site. Connects to their port
     //else, connect to local port on your machine
+
     app.listen(process.env.PORT || 5000);
+
     console.log("App listening on port 5000");
 
     // routes ======================================================================
