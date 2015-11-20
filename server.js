@@ -14,6 +14,13 @@
     //if there is no host database available, then app will connect to mongodb database in localhost. The database is called 'admins'
     mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/admins'); 
     
+    mongoose.connection.on("open", function() {
+    console.log("connection to database done!");
+    });
+
+    mongoose.connection.on("error", function() {
+        console.log("error");
+    });
     app.use(express.static(__dirname + '/public'));                 // set the static files location /public/img will be /img for users
 
     app.use(morgan('dev'));                                         // log every request to the console

@@ -46,7 +46,7 @@ g2l.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
             controller: 'eventsController'
         }).                        
         otherwise({
-            redirectTo: "/adminPortal"
+            redirectTo: "/home"
         });
        $locationProvider.html5Mode({
         requireBase: false,
