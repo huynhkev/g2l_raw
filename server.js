@@ -12,7 +12,7 @@
 
     //process.env.MONGOLAB_URI is the link used to connect to mongolab's database for when app is deployed to host site
     //if there is no host database available, then app will connect to mongodb database in localhost. The database is called 'admins'
-    mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/admins'); 
+    mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://heroku_76tmw7gw:hl53kfv1jn6uq481sv4la5hoih@ds033877.mongolab.com:33877/heroku_76tmw7gw'); 
     
     mongoose.connection.on("open", function() {
     console.log("connection to database done!");
